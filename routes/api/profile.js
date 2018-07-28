@@ -7,7 +7,7 @@ const passport = require("passport");
 //load profile model
 const profile = require("../../models/Profile");
 //load user model
-const profile = require("../../models/User");
+const user = require("../../models/User");
 
 // @route GET api/profile/test
 // @desc Tests Profile route
