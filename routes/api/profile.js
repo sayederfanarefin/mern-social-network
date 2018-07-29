@@ -1,8 +1,10 @@
+//constants which are required
 const express = require("express");
-
-const router = express.Router();
 const mongoose = require("mongoose");
 const passport = require("passport");
+
+//define router
+const router = express.Router();
 
 //load profile model
 const profile = require("../../models/Profile");
