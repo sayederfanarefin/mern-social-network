@@ -66,7 +66,6 @@ class Navbar extends Component {
                       type="text"
                       placeholder="Explore Modern..."
                     />
-                    >
                   </div>
                 </li>
               </ul>
@@ -127,11 +126,9 @@ class Navbar extends Component {
                     <a className="dropdown-item" href="">
                       <i className="flag-icon flag-icon-gb" /> English
                     </a>
+
                     <a className="dropdown-item" href="">
-                      <i className="flag-icon flag-icon-fr" /> French
-                    </a>
-                    <a className="dropdown-item" href="">
-                      <i className="flag-icon flag-icon-cn" /> Chinese
+                      <i className="flag-icon flag-icon-bd" /> Bangladeshi
                     </a>
                     <a className="dropdown-item" href="">
                       <i className="flag-icon flag-icon-de" /> German
