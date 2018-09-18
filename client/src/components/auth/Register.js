@@ -95,7 +95,7 @@ class Register extends Component {
                                 <input
                                   type="email"
                                   className={classnames("form-control", {
-                                    "is-invalid": errors.name
+                                    "is-invalid": errors.email
                                   })}
                                   id="email"
                                   name="email"
@@ -116,7 +116,7 @@ class Register extends Component {
                                 <input
                                   type="password"
                                   className={classnames("form-control", {
-                                    "is-invalid": errors.name
+                                    "is-invalid": errors.password
                                   })}
                                   id="password"
                                   name="password"
@@ -137,7 +137,7 @@ class Register extends Component {
                                 <input
                                   type="password"
                                   className={classnames("form-control", {
-                                    "is-invalid": errors.name
+                                    "is-invalid": errors.password2
                                   })}
                                   id="password2"
                                   name="password2"
