@@ -83,16 +83,18 @@ class Login extends Component {
                       <div className="card-body">
                         <form
                           className="form-horizontal"
-                          action="index.html"
+                          onSubmit={this.onSubmit}
                           noValidate
                         >
                           <fieldset className="form-group position-relative has-icon-left">
                             <input
-                              type="text"
+                              type="email"
                               className="form-control"
-                              id="user-name"
-                              placeholder="Your Username"
-                              required
+                              id="email"
+                              name="email"
+                              placeholder="Your Email"
+                              value={this.state.email}
+                              onChange={this.onChange}
                             />
                             <div className="form-control-position">
                               <i className="icon-envelope" />
@@ -102,9 +104,11 @@ class Login extends Component {
                             <input
                               type="password"
                               className="form-control"
-                              id="user-password"
+                              id="password"
+                              name="password"
                               placeholder="Enter Password"
-                              required
+                              value={this.state.password}
+                              onChange={this.onChange}
                             />
                             <div className="form-control-position">
                               <i className="la la-key" />
@@ -142,7 +146,7 @@ class Login extends Component {
                         </form>
                       </div>
                       <p className="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-1">
-                        <span>New to Modern ?</span>
+                        <span>New to Social Developers ?</span>
                       </p>
                       <div className="card-body">
                         <a
