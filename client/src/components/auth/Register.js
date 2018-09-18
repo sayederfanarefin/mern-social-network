@@ -42,7 +42,7 @@ class Register extends Component {
 
     return (
       <div className="register">
-        <div className="vertical-layout vertical-content-menu 1-column  bg-full-screen-image menu-expanded blank-page blank-page">
+        <div>
           <div className="app-content content">
             <div className="content-wrapper">
               <div className="content-header row" />
@@ -54,9 +54,9 @@ class Register extends Component {
                         <div className="card-header border-0 pb-0">
                           <div className="card-title text-center">
                             <img
-                              src="logo_final.png"
-                              alt="branding logo"
-                              height="100px"
+                              src="https://erfancdn.blob.core.windows.net/admin-template/images/sd_logo.png"
+                              height="80px"
+                              alt="Social Developers"
                             />
                           </div>
                           <h6 className="card-subtitle line-on-side text-muted text-center font-small-3 pt-2">
@@ -107,7 +107,7 @@ class Register extends Component {
                                   placeholder="User Name"
                                 />
                                 <div className="form-control-position">
-                                  <i className="ft-user" />
+                                  <i className="icon-user" />
                                 </div>
                               </fieldset>
                               <fieldset className="form-group position-relative has-icon-left">
@@ -119,7 +119,7 @@ class Register extends Component {
                                   required
                                 />
                                 <div className="form-control-position">
-                                  <i className="ft-mail" />
+                                  <i className="icon-envelope" />
                                 </div>
                               </fieldset>
                               <fieldset className="form-group position-relative has-icon-left">
@@ -161,16 +161,16 @@ class Register extends Component {
                                 type="submit"
                                 className="btn btn-outline-info btn-block"
                               >
-                                <i className="ft-user" /> Register
+                                <i className="icon-user" /> Register
                               </button>
                             </form>
                           </div>
                           <div className="card-body">
                             <a
-                              href="login-with-bg-image.html"
+                              href="/login"
                               className="btn btn-outline-danger btn-block"
                             >
-                              <i className="ft-unlock" />
+                              <i className="icon-lock-open" />
                               Login
                             </a>
                           </div>
