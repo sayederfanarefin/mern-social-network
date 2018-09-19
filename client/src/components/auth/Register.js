@@ -102,6 +102,7 @@ class Register extends Component {
                                   placeholder="Your Email Address"
                                   value={this.state.email}
                                   onChange={this.onChange}
+                                  required
                                 />
                                 <div className="form-control-position">
                                   <i className="icon-envelope" />
