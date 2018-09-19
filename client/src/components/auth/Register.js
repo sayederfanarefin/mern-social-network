@@ -69,6 +69,7 @@ class Register extends Component {
                             <form
                               className="form-horizontal"
                               onSubmit={this.onSubmit}
+                              noValidate
                             >
                               <fieldset className="form-group position-relative has-icon-left">
                                 <input
