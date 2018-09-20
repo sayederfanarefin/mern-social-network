@@ -87,7 +87,7 @@ class Register extends Component {
                                 </div>
                                 {errors.name && (
                                   <div className="invalid-feedback">
-                                    errors.name
+                                    {errors.name}
                                   </div>
                                 )}
                               </fieldset>
@@ -102,14 +102,13 @@ class Register extends Component {
                                   placeholder="Your Email Address"
                                   value={this.state.email}
                                   onChange={this.onChange}
-                                  required
                                 />
                                 <div className="form-control-position">
                                   <i className="icon-envelope" />
                                 </div>
                                 {errors.email && (
                                   <div className="invalid-feedback">
-                                    errors.email
+                                    {errors.email}
                                   </div>
                                 )}
                               </fieldset>
@@ -130,7 +129,7 @@ class Register extends Component {
                                 </div>
                                 {errors.password && (
                                   <div className="invalid-feedback">
-                                    errors.password
+                                    {errors.password}
                                   </div>
                                 )}
                               </fieldset>
@@ -151,7 +150,7 @@ class Register extends Component {
                                 </div>
                                 {errors.password2 && (
                                   <div className="invalid-feedback">
-                                    errors.password2
+                                    {errors.password2}
                                   </div>
                                 )}
                               </fieldset>
