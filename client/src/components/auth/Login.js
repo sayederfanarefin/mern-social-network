@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import classnames from "classnames";
+import { loginUser } from "../../actions/authActions";
 
 class Login extends Component {
   constructor() {
@@ -13,15 +17,31 @@ class Login extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
 
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
+
   onSubmit(e) {
     e.preventDefault();
 
-    const user = {
+    const userData = {
       email: this.state.email,
       password: this.state.password
     };
 
-    console.log(user);
+    this.props.loginUser(userData);
   }
 
   onChange(e) {
@@ -29,6 +49,7 @@ class Login extends Component {
   }
 
   render() {
+    const { errors } = this.state;
     return (
       <div className="app-content content">
         <div className="content-wrapper">
@@ -89,7 +110,9 @@ class Login extends Component {
                           <fieldset className="form-group position-relative has-icon-left">
                             <input
                               type="email"
-                              className="form-control"
+                              className={classnames("form-control", {
+                                "is-invalid": errors.email
+                              })}
                               id="email"
                               name="email"
                               placeholder="Your Email"
@@ -99,11 +122,18 @@ class Login extends Component {
                             <div className="form-control-position">
                               <i className="icon-envelope" />
                             </div>
+                            {errors.email && (
+                              <div className="invalid-feedback">
+                                {errors.email}
+                              </div>
+                            )}
                           </fieldset>
                           <fieldset className="form-group position-relative has-icon-left">
                             <input
                               type="password"
-                              className="form-control"
+                              className={classnames("form-control", {
+                                "is-invalid": errors.password
+                              })}
                               id="password"
                               name="password"
                               placeholder="Enter Password"
@@ -113,6 +143,11 @@ class Login extends Component {
                             <div className="form-control-position">
                               <i className="la la-key" />
                             </div>
+                            {errors.password && (
+                              <div className="invalid-feedback">
+                                {errors.password}
+                              </div>
+                            )}
                           </fieldset>
                           <div className="form-group row">
                             <div className="col-md-6 col-12 text-center text-sm-left">
@@ -169,4 +204,18 @@ class Login extends Component {
   }
 }
 
-export default Login;
+Login.propTypes = {
+  loginUser: PropTypes.func.isRequired,
+  auth: PropTypes.object.isRequired,
+  errors: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  auth: state.auth,
+  errors: state.errors
+});
+
+export default connect(
+  mapStateToProps,
+  { loginUser }
+)(Login);
